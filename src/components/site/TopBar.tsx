@@ -18,7 +18,6 @@ export default function TopBar() {
             <Clock className="h-3 w-3 shrink-0" /> {t("topBar.hours")}
           </span>
         </div>
-        <LanguageSwitcher variant="onPrimary" compact className="shrink-0" />
       </div>
     </div>
   );
