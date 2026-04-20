@@ -39,10 +39,10 @@ function AboutPage() {
 
       <section className="py-20">
         <div className="container grid lg:grid-cols-2 gap-14 items-center">
-          <div className="rounded-2xl shadow-elegant aspect-[4/5] overflow-hidden">
-            <img src={doctorClinic} alt={t("about.imgClinicAlt")} loading="lazy" className="h-full w-full object-cover" />
+          <div className="rounded-2xl shadow-elegant aspect-[4/5] overflow-hidden reveal">
+            <img src={doctorClinic} alt={t("about.imgClinicAlt")} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 hover:scale-105" />
           </div>
-          <div className="space-y-5">
+          <div className="space-y-5 reveal" style={{ transitionDelay: '0.2s' }}>
             <p className="uppercase tracking-[0.3em] text-xs text-secondary font-semibold">{t("about.storyKicker")}</p>
             <h2 className="font-display text-4xl md:text-5xl text-primary leading-tight text-balance">{t("about.storyTitle")}</h2>
             <p className="text-muted-foreground leading-relaxed">{t("about.storyP1")}</p>
@@ -64,7 +64,7 @@ function AboutPage() {
             <p className="uppercase tracking-[0.3em] text-xs text-secondary font-semibold mb-3">{t("about.founderKicker")}</p>
             <h2 className="font-display text-4xl md:text-5xl text-primary text-balance">{t("about.founderTitle")}</h2>
           </div>
-          <div className="max-w-3xl mx-auto rounded-2xl bg-card border shadow-card-soft p-8 md:p-12 text-center">
+          <div className="max-w-3xl mx-auto rounded-2xl bg-card border shadow-card-soft p-8 md:p-12 text-center reveal">
             <div className="h-32 w-32 rounded-full overflow-hidden mx-auto mb-5 ring-4 ring-secondary/30 shadow-elegant">
               <img src={doctorPortrait} alt={t("about.imgDoctorAlt")} loading="lazy" className="h-full w-full object-cover" />
             </div>
@@ -84,9 +84,9 @@ function AboutPage() {
             <p className="uppercase tracking-[0.3em] text-xs text-secondary font-semibold mb-3">{t("about.valuesKicker")}</p>
             <h2 className="font-display text-4xl md:text-5xl text-primary text-balance">{t("about.valuesTitle")}</h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6 reveal-stagger">
             {values.map((v) => (
-              <div key={v.t} className="rounded-2xl bg-card border p-6 shadow-card-soft text-center">
+              <div key={v.t} className="rounded-2xl bg-card border p-6 shadow-card-soft text-center hover-lift">
                 <h3 className="font-display text-2xl text-primary">{v.t}</h3>
                 <p className="mt-3 text-sm text-muted-foreground">{v.d}</p>
               </div>

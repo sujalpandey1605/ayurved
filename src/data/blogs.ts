@@ -5,6 +5,7 @@ export interface BlogPost {
   date: string;
   category: string;
   readTime: string;
+  image: string;
   content: string[];
 }
 
@@ -16,6 +17,7 @@ export const blogs: BlogPost[] = [
     date: "2025-02-12",
     category: "Panchakarma",
     readTime: "6 min read",
+    image: "/blog-imgs/panchakarma.jpg",
     content: [
       "Panchakarma literally means 'five actions'. It is the most well-known classical Ayurvedic protocol and is designed to clear deep-seated toxins (ama) that even a clean diet cannot remove on its own.",
       "The five core procedures are Vamana (therapeutic emesis), Virechana (purgation), Basti (medicated enema), Nasya (nasal medication) and Raktamokshana (blood-letting). Not every patient needs all five — your doctor selects only what suits your dosha and condition.",
@@ -31,6 +33,7 @@ export const blogs: BlogPost[] = [
     date: "2025-01-30",
     category: "Kidney Health",
     readTime: "7 min read",
+    image: "/blog-imgs/blog-kidney.png",
     content: [
       "When kidney function falls, the diet has to do extra work. The right foods reduce the load on the kidneys, prevent fluid build-up and keep your blood values stable.",
       "Protein needs to be moderate, not zero. Good sources include moong dal, paneer in small quantities and egg whites. Red meat and protein powders are usually best avoided.",
@@ -46,6 +49,7 @@ export const blogs: BlogPost[] = [
     date: "2025-01-18",
     category: "Wellness",
     readTime: "5 min read",
+    image: "/blog-imgs/holistic.jpg",
     content: [
       "Modern stress is rarely a single event — it is the constant hum of notifications, deadlines and incomplete sleep. Ayurveda treats this state as aggravated Vata and over-stimulated Sadhaka Pitta.",
       "Begin with Abhyanga — a gentle daily self-massage with warm sesame or Brahmi oil. Even ten minutes is enough to calm the nervous system before your shower.",
@@ -61,6 +65,7 @@ export const blogs: BlogPost[] = [
     date: "2025-01-05",
     category: "Liver Health",
     readTime: "6 min read",
+    image: "/blog-imgs/blog-liver.png",
     content: [
       "The liver does over 500 jobs every day, from filtering toxins to producing bile and storing nutrients. It rarely complains until it is already stressed.",
       "Look out for unexplained fatigue, mild yellowness in the eyes, persistent nausea, dull pain under the right rib, and dark urine. Skin issues and stubborn weight gain can also be signals.",
@@ -76,6 +81,7 @@ export const blogs: BlogPost[] = [
     date: "2024-12-22",
     category: "Wellness",
     readTime: "5 min read",
+    image: "/blog-imgs/blog-sleep.png",
     content: [
       "Quality sleep heals more than any supplement can. Yet most adults today struggle to fall asleep or stay asleep through the night.",
       "Begin winding down 90 minutes before bedtime. Dim the lights, switch off bright screens and shift to warm, low-stimulation activities.",
@@ -91,6 +97,7 @@ export const blogs: BlogPost[] = [
     date: "2024-12-10",
     category: "Diabetes",
     readTime: "7 min read",
+    image: "/blog-imgs/blog-diabetes.png",
     content: [
       "Type 2 diabetes is largely a lifestyle disease. The good news is that it responds beautifully to consistent, simple changes.",
       "Build every plate around vegetables, dal, a small portion of grain and a healthy fat. Cut added sugar to near zero and limit fruit juices entirely.",
@@ -106,6 +113,7 @@ export const blogs: BlogPost[] = [
     date: "2024-11-28",
     category: "Therapies",
     readTime: "5 min read",
+    image: "/blog-imgs/blog-shirodhara.png",
     content: [
       "Shirodhara is a classical Ayurvedic therapy where a thin, continuous stream of warm medicated oil is poured on the forehead for 30–45 minutes.",
       "It is widely used for chronic stress, anxiety, insomnia, migraine, hair fall and certain skin conditions. The effect on the nervous system is remarkable.",
@@ -121,6 +129,7 @@ export const blogs: BlogPost[] = [
     date: "2024-11-15",
     category: "Joints & Spine",
     readTime: "6 min read",
+    image: "/blog-imgs/blog-joint-pain.png",
     content: [
       "We are seeing more 30 and 40-year-olds with knee, neck and back pain than ever before. Long sitting hours and weak core muscles are the main culprits.",
       "Posture matters more than people realise. Even small daily corrections — screen at eye level, feet flat on the floor — can prevent cumulative damage.",
@@ -136,6 +145,7 @@ export const blogs: BlogPost[] = [
     date: "2024-10-30",
     category: "Fertility",
     readTime: "7 min read",
+    image: "/blog-imgs/treatment-17.jpg",
     content: [
       "It takes about 90 days for an egg to mature and for sperm to fully form. That window is your single biggest opportunity to influence fertility outcomes.",
       "Both partners benefit from clean diet, regular sleep, quitting smoking and reducing alcohol during this period.",
@@ -151,6 +161,7 @@ export const blogs: BlogPost[] = [
     date: "2024-10-15",
     category: "Lifestyle",
     readTime: "4 min read",
+    image: "/blog-imgs/why-choose.jpg",
     content: [
       "Drink a glass of warm water first thing in the morning. It gently wakes up digestion and supports natural detoxification.",
       "Eat your largest meal at lunch when digestive fire is strongest. Keep dinner light and finish 2–3 hours before bedtime.",
@@ -166,6 +177,7 @@ export const blogs: BlogPost[] = [
     date: "2024-09-28",
     category: "Hypertension",
     readTime: "6 min read",
+    image: "/blog-imgs/treatment-16.jpg",
     content: [
       "Most people with high blood pressure feel completely normal. That is exactly what makes it dangerous — damage builds quietly over years.",
       "A normal reading is below 120/80. Consistent readings above 140/90 need attention; values above 160/100 need urgent care.",
@@ -181,6 +193,7 @@ export const blogs: BlogPost[] = [
     date: "2024-09-12",
     category: "Cancer Care",
     readTime: "7 min read",
+    image: "/src/assets/dr-joshi-clinic.jpg",
     content: [
       "Modern oncology saves lives. Integrative Ayurveda makes the journey kinder — reducing side-effects, supporting strength and improving quality of life.",
       "Common chemotherapy side-effects like nausea, mouth ulcers, neuropathy and fatigue often respond to specific Ayurvedic protocols.",

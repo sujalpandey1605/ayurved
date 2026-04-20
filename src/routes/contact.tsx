@@ -35,9 +35,9 @@ function ContactPage() {
       />
       <section className="py-16">
         <div className="container grid lg:grid-cols-[1.1fr_1fr] gap-12">
-          <div className="space-y-8">
+          <div className="space-y-8 reveal">
             <div className="rounded-2xl overflow-hidden shadow-card-soft border">
-              <img src={clinicInterior} alt={t("contact.imgAlt")} loading="lazy" className="w-full aspect-[16/9] object-cover" />
+              <img src={clinicInterior} alt={t("contact.imgAlt")} loading="lazy" className="w-full aspect-[16/9] object-cover transition-transform duration-700 hover:scale-105" />
             </div>
             <div className="rounded-2xl border bg-card p-7 shadow-card-soft">
               <h2 className="font-display text-3xl text-primary mb-5">{t("contact.getInTouch")}</h2>
@@ -92,7 +92,8 @@ function ContactPage() {
               e.preventDefault();
               setSent(true);
             }}
-            className="rounded-2xl border bg-card p-7 shadow-card-soft space-y-4"
+            className="rounded-2xl border bg-card p-7 shadow-card-soft space-y-4 reveal"
+            style={{ transitionDelay: '0.2s' }}
           >
             <h2 className="font-display text-3xl text-primary">{t("contact.sendTitle")}</h2>
             <p className="text-sm text-muted-foreground">{t("contact.sendSub")}</p>

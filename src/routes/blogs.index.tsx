@@ -46,7 +46,14 @@ function BlogList() {
               params={{ slug: b.slug }}
               className="group rounded-2xl border bg-card overflow-hidden shadow-card-soft hover:shadow-elegant hover:-translate-y-0.5 transition"
             >
-              <div className="aspect-[16/10] bg-gradient-to-br from-primary via-primary-glow to-secondary" />
+              <div className="aspect-[16/10] overflow-hidden img-zoom">
+                <img 
+                  src={b.image} 
+                  alt={b.title} 
+                  loading="lazy" 
+                  className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                />
+              </div>
               <div className="p-6">
                 <span className="text-xs text-secondary font-semibold uppercase tracking-wider">{b.category}</span>
                 <h3 className="font-display text-xl text-primary mt-2 leading-snug">{b.title}</h3>

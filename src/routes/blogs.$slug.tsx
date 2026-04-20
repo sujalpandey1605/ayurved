@@ -53,12 +53,15 @@ function BlogDetail() {
               <Clock className="h-4 w-4" /> {post.readTime}
             </span>
           </div>
-          <div className="prose prose-lg max-w-none space-y-5 text-foreground/85 leading-relaxed">
+          <div className="rounded-2xl overflow-hidden shadow-elegant mb-10 reveal">
+            <img src={post.image} alt={post.title} className="w-full aspect-[16/9] object-cover" />
+          </div>
+          <div className="prose prose-lg max-w-none space-y-5 text-foreground/85 leading-relaxed reveal">
             {post.content.map((para: string, i: number) => (
               <p key={i}>{para}</p>
             ))}
           </div>
-          <Link to="/blogs" className="inline-flex items-center gap-2 mt-12 text-secondary font-semibold hover:gap-3 transition-all">
+          <Link to="/blogs" className="inline-flex items-center gap-2 mt-12 text-secondary font-semibold hover:gap-3 transition-all reveal">
             <ArrowLeft className="h-4 w-4" /> {t("blogs.backToArticles")}
           </Link>
         </div>
@@ -66,16 +69,18 @@ function BlogDetail() {
 
       <section className="py-16 bg-leaf-gradient">
         <div className="container">
-          <h2 className="font-display text-3xl md:text-4xl text-primary mb-8">{t("blogs.moreArticles")}</h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <h2 className="font-display text-3xl md:text-4xl text-primary mb-8 reveal">{t("blogs.moreArticles")}</h2>
+          <div className="grid md:grid-cols-3 gap-6 reveal-stagger">
             {related.map((b) => (
               <Link
                 key={b.slug}
                 to="/blogs/$slug"
                 params={{ slug: b.slug }}
-                className="rounded-2xl border bg-card overflow-hidden shadow-card-soft hover:shadow-elegant transition"
+                className="rounded-2xl border bg-card overflow-hidden shadow-card-soft hover:shadow-elegant transition group"
               >
-                <div className="aspect-[16/10] bg-gradient-to-br from-primary via-primary-glow to-secondary" />
+                <div className="aspect-[16/10] overflow-hidden">
+                  <img src={b.image} alt={b.title} loading="lazy" className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                </div>
                 <div className="p-6">
                   <span className="text-xs text-secondary font-semibold uppercase tracking-wider">{b.category}</span>
                   <h3 className="font-display text-lg text-primary mt-2 leading-snug">{b.title}</h3>

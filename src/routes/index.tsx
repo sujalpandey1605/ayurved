@@ -57,7 +57,7 @@ function HomePage() {
       >
         <div className="pointer-events-none absolute inset-0 bg-black/50" aria-hidden />
         <div className="container relative z-10 grid lg:grid-cols-[1.2fr_1fr] gap-12 py-20 lg:py-28 items-center">
-          <div className="space-y-7 animate-fade-up">
+          <div className="space-y-7 reveal">
             <span className="inline-flex items-center gap-2 rounded-full bg-secondary/20 border border-secondary/40 px-4 py-1.5 text-xs font-medium tracking-wide text-secondary">
               <Leaf className="h-3.5 w-3.5" /> {t("hero.tag")}
             </span>
@@ -90,7 +90,8 @@ function HomePage() {
               e.preventDefault();
               alert(t("hero.formSuccess"));
             }}
-            className="bg-background text-foreground rounded-2xl shadow-elegant p-7 space-y-4 animate-fade-up"
+            className="bg-background text-foreground rounded-2xl shadow-elegant p-7 space-y-4 reveal"
+            style={{ transitionDelay: '0.2s' }}
           >
             <div>
               <h3 className="font-display text-3xl text-primary">{t("hero.form.title")}</h3>
@@ -112,7 +113,7 @@ function HomePage() {
       </section>
 
       <section className="py-14 bg-primary text-primary-foreground relative overflow-hidden">
-        <div className="container relative grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="container relative grid grid-cols-2 lg:grid-cols-4 gap-8 reveal-stagger">
           {stats.map((s) => (
             <div key={s.l} className="text-center">
               <div className="font-display text-5xl md:text-6xl text-secondary">{s.n}</div>
@@ -130,10 +131,10 @@ function HomePage() {
             <h2 className="font-display text-4xl md:text-5xl text-primary text-balance">{t("home.servicesTitle")}</h2>
             <p className="mt-4 text-muted-foreground">{t("home.servicesDesc")}</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6 reveal-stagger">
             {services.map((s) => (
-              <article key={s.slug} className="rounded-2xl border bg-card overflow-hidden shadow-card-soft hover:shadow-elegant transition group">
-                <div className="aspect-[16/10] overflow-hidden">
+              <article key={s.slug} className="rounded-2xl border bg-card overflow-hidden shadow-card-soft hover-lift group">
+                <div className="aspect-[16/10] overflow-hidden img-zoom">
                   <img
                     src={serviceImages[s.slug]}
                     alt={localizedTitle(s, lang, t)}
@@ -159,7 +160,7 @@ function HomePage() {
 
       <section className="py-20 lg:py-28 bg-leaf-gradient">
         <div className="container grid lg:grid-cols-2 gap-14 items-center">
-          <div className="relative">
+          <div className="relative reveal">
             <img
               src={aboutClinic}
               alt={t("home.clinicAlt")}
@@ -171,7 +172,7 @@ function HomePage() {
               <div className="text-sm mt-1 font-medium">{t("home.aboutBadge")}</div>
             </div>
           </div>
-          <div className="space-y-6">
+          <div className="space-y-6 reveal" style={{ transitionDelay: '0.2s' }}>
             <p className="uppercase tracking-[0.3em] text-xs text-secondary font-semibold">{t("home.aboutKicker")}</p>
             <h2 className="font-display text-4xl md:text-5xl text-primary leading-tight text-balance">
               {t("home.aboutTitlePrefix")}{" "}
@@ -204,10 +205,10 @@ function HomePage() {
             <h2 className="font-display text-4xl md:text-5xl text-primary text-balance">{t("home.treatmentsTitle")}</h2>
             <p className="mt-4 text-muted-foreground">{t("home.treatmentsDesc")}</p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 reveal-stagger">
             {treatments.map((s) => (
               <Link key={s.slug} to="/treatments/$slug" params={{ slug: s.slug }}
-                className="rounded-2xl border bg-card p-6 shadow-card-soft hover:shadow-elegant hover:-translate-y-0.5 transition group">
+                className="rounded-2xl border bg-card p-6 shadow-card-soft hover-lift transition group">
                 <h3 className="font-display text-xl text-primary leading-snug">{localizedTitle(s, lang, t)}</h3>
                 <p className="mt-2 text-sm text-muted-foreground line-clamp-2">{localizedIntro(s, lang, t)}</p>
                 <span className="inline-flex items-center gap-1 mt-4 text-sm font-semibold text-secondary group-hover:gap-2 transition-all">
@@ -226,11 +227,11 @@ function HomePage() {
             <p className="uppercase tracking-[0.3em] text-xs text-secondary font-semibold mb-3">{t("home.whyKicker")}</p>
             <h2 className="font-display text-4xl md:text-5xl text-primary text-balance">{t("home.whyTitle")}</h2>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 reveal-stagger">
             {whyItems.map((item, i) => {
               const Icon = whyIcons[i] ?? Award;
               return (
-                <div key={item.t} className="rounded-2xl bg-card border p-6 shadow-card-soft">
+                <div key={item.t} className="rounded-2xl bg-card border p-6 shadow-card-soft hover-lift">
                   <div className="h-12 w-12 rounded-xl bg-primary text-primary-foreground grid place-items-center mb-4">
                     <Icon className="h-5 w-5" />
                   </div>
@@ -254,23 +255,20 @@ function HomePage() {
               <Button variant="outline" size="lg">{t("cta.viewAllArticles")}</Button>
             </Link>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {blogs.slice(0, 3).map((b, i) => {
-              const blogImgs = [holisticImg, panchakarmaImg, treatment16];
-              return (
-                <Link key={b.slug} to="/blogs/$slug" params={{ slug: b.slug }}
-                  className="rounded-2xl border bg-card overflow-hidden shadow-card-soft hover:shadow-elegant transition group">
-                  <div className="aspect-[16/10] overflow-hidden">
-                    <img src={blogImgs[i]} alt={b.title} loading="lazy" className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  </div>
-                  <div className="p-6">
-                    <span className="text-xs text-secondary font-semibold uppercase tracking-wider">{b.category}</span>
-                    <h3 className="font-display text-xl text-primary mt-2 leading-snug">{b.title}</h3>
-                    <p className="mt-2 text-sm text-muted-foreground line-clamp-2">{b.excerpt}</p>
-                  </div>
-                </Link>
-              );
-            })}
+          <div className="grid md:grid-cols-3 gap-6 reveal-stagger">
+            {blogs.slice(0, 3).map((b) => (
+              <Link key={b.slug} to="/blogs/$slug" params={{ slug: b.slug }}
+                className="rounded-2xl border bg-card overflow-hidden shadow-card-soft hover-lift transition group">
+                <div className="aspect-[16/10] overflow-hidden img-zoom">
+                  <img src={b.image} alt={b.title} loading="lazy" className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                </div>
+                <div className="p-6">
+                  <span className="text-xs text-secondary font-semibold uppercase tracking-wider">{b.category}</span>
+                  <h3 className="font-display text-xl text-primary mt-2 leading-snug">{b.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground line-clamp-2">{b.excerpt}</p>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

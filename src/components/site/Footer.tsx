@@ -84,11 +84,11 @@ export default function Footer() {
         <div>
           <h4 className="font-display text-xl text-secondary mb-5">{t("footer.branches")}</h4>
           <ul className="space-y-2.5 text-sm text-primary-foreground/85">
-            <li>{t("footer.branch1")}</li>
-            <li>{t("footer.branch2")}</li>
-            <li>{t("footer.branch3")}</li>
-            <li>{t("footer.branch4")}</li>
-            <li>{t("footer.branch5")}</li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=Dr.+Joshi+Ayurvedic+Clinic+Borivali+West" target="_blank" className="hover:text-secondary transition">{t("footer.branch1")}</a></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=Dr.+Joshi+Ayurvedic+Clinic+Dadar+West" target="_blank" className="hover:text-secondary transition">{t("footer.branch2")}</a></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=Dr.+Joshi+Ayurvedic+Clinic+Thane+West" target="_blank" className="hover:text-secondary transition">{t("footer.branch3")}</a></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=Dr.+Joshi+Ayurvedic+Clinic+Pune" target="_blank" className="hover:text-secondary transition">{t("footer.branch4")}</a></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=Dr.+Joshi+Ayurvedic+Clinic+Nashik" target="_blank" className="hover:text-secondary transition">{t("footer.branch5")}</a></li>
           </ul>
         </div>
 
@@ -109,7 +109,7 @@ export default function Footer() {
             </li>
             <li className="flex gap-2">
               <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-secondary" />
-              <span>{t("footer.address")}</span>
+              <a href="https://www.google.com/maps/search/?api=1&query=Dr.+Joshi+Ayurvedic+Clinic+Dadar+West+Mumbai+400028" target="_blank" className="hover:text-secondary transition">{t("footer.address")}</a>
             </li>
           </ul>
         </div>

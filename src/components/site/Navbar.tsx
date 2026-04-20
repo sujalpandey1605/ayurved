@@ -118,7 +118,7 @@ export default function Navbar() {
               >
                 <Link
                   to={l.href}
-                  className="flex items-center gap-1 text-sm font-medium text-foreground/80 hover:text-primary transition py-2"
+                  className="flex items-center gap-1 text-sm font-medium text-foreground/80 hover:text-primary transition py-2 link-underline"
                 >
                   {l.label}
                   <ChevronDown
@@ -134,7 +134,7 @@ export default function Navbar() {
               <Link
                 key={l.label}
                 to={l.href}
-                className="text-sm font-medium text-foreground/80 hover:text-primary transition py-2"
+                className="text-sm font-medium text-foreground/80 hover:text-primary transition py-2 link-underline"
               >
                 {l.label}
               </Link>
